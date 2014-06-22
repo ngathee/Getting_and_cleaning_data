@@ -48,10 +48,3 @@ processed <- aggregate(tidy_data,by=tidy_data[c("Subject","Activity")],FUN=mean)
 
 #### Save the tidy as a txt file
 write.table(processed, file="tidy_data.txt", row.names = F)
-
-
-dd <- read.table("./tidy_data.txt", header=T)
-class(names(dd))
-for(i in as.factor(names(dd))) {
-        print(paste("-", i), quote=F)
-}
